@@ -104,8 +104,8 @@ mod tests {
     fn it_works() {
         let mut compiler = Compiler::default();
 
-        compiler.query(Query::Source(refl(), PathBuf::from("src/main.rs"))).unwrap();
-        compiler.query(Query::Source(refl(), PathBuf::from("src/main.rs"))).unwrap();
-        compiler.query(Query::Source(refl(), PathBuf::from("src/main.rs"))).unwrap();
+        dbg!(compiler.query(Query::Source(refl(), PathBuf::from("src/main.rs"))).unwrap());
+        dbg!(compiler.query(Query::Source(refl(), PathBuf::from("src/main.rs"))).unwrap());
+        dbg!(compiler.query(Query::Source(refl(), PathBuf::from("src/main.rs"))).unwrap());
     }
 }
