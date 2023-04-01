@@ -1,4 +1,4 @@
-use std::any::{Any, type_name};
+use std::any::Any;
 use std::fs::read_to_string;
 use std::hash::Hash;
 use std::path::PathBuf;
@@ -7,7 +7,7 @@ use std::rc::Rc;
 use intmap::IntMap;
 
 use crate::eszopiclone::Fail::{InvalidCacheDowncast, UnboundModule};
-use crate::id::{Id, id};
+use crate::id::{id, Id};
 
 pub type Result<T, E = Fail> = std::result::Result<T, E>;
 
@@ -85,7 +85,6 @@ impl Compiler {
         }
     }
 }
-
 
 #[cfg(test)]
 mod tests {
