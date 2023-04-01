@@ -1,6 +1,7 @@
+use std::fmt::{Debug, Formatter};
 use std::marker::PhantomData;
 
-#[derive(Hash, Clone, Default, Debug, PartialEq, Eq, PartialOrd, Ord, Copy)]
+#[derive(Hash, Clone, Default, PartialEq, Eq, PartialOrd, Ord, Copy)]
 pub struct Is<A, B>(PhantomData<(A, B)>);
 
 #[inline]
@@ -23,5 +24,11 @@ impl<A: Sized, B: Sized> Is<A, B> {
         unsafe {
             std::mem::transmute_copy(&value)
         }
+    }
+}
+
+impl<A: Sized, B: Sized> Debug for Is<A, B> {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        write!(f, "#refl")
     }
 }
