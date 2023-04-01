@@ -1,7 +1,6 @@
-use std::alloc::Layout;
 use std::fmt::Debug;
 use std::hash::Hash;
-use std::mem::{transmute, transmute_copy, MaybeUninit};
+use std::mem::{transmute, transmute_copy};
 use std::os::raw::c_void;
 use std::path::PathBuf;
 
